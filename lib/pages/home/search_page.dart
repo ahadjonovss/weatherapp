@@ -6,6 +6,7 @@ import 'package:weatherapp/core/constants/image.dart';
 import 'package:weatherapp/core/constants/lotties.dart';
 import 'package:weatherapp/core/constants/mediaquares.dart';
 import 'package:weatherapp/core/models/h_d_model/hd_forecast_new.dart';
+import 'package:weatherapp/pages/home/widgets/shimmers/serach_page_shimmer.dart';
 import 'package:weatherapp/pages/home/widgets/weather_info_city.dart';
 import 'package:weatherapp/service/hd_forecast_service.dart';
 
@@ -55,6 +56,9 @@ class _SearchPageState extends State<SearchPage> {
                 ],
               ),
             );
+          }
+          if(snapshot.connectionState == ConnectionState.waiting){
+            return SearchPageShimmer();
           }
           return Container();
         },

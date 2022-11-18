@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Stack(
                 children: [
-                  Positioned(
+                  const Positioned(
                     bottom: 70,
                     child: bottom_sheet_widget(),
                   ), //Bottomsheet
