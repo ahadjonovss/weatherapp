@@ -67,8 +67,6 @@ class _bottom_sheet_widgetState extends State<bottom_sheet_widget> {
                                 children: [
                                   weather_info_widget(data: data!.hourly,isHourly: true),
                                   weather_info_widget(data: data.daily)
-
-
                                 ]),
                           )
                         ],
