@@ -41,6 +41,7 @@ dependencies:
   dio: ^4.0.6
   http: ^0.13.5
   intl: ^0.17.0
+  lottie: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,7 @@ flutter:
     - assets/images/
     - assets/icons/svg_icons/
     - assets/icons/png_icons/
+    - assets/lotties/weather_lotties/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

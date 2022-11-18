@@ -6,7 +6,6 @@ import 'package:weatherapp/pages/home/widgets/weather_info_widget.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/mediaquares.dart';
 import 'package:weatherapp/service/hd_forecast_service.dart';
-import 'package:weatherapp/core/models/h_d_model/hourly_daily_forecast_model.dart';
 
 import '../../../core/models/h_d_model/hd_forecast_new.dart';
 
@@ -66,7 +65,7 @@ class _bottom_sheet_widgetState extends State<bottom_sheet_widget> {
                             height: m_h(context)*0.2,
                             child:  TabBarView(
                                 children: [
-                                  weather_info_widget(data: data!.daily),
+                                  weather_info_widget(data: data!.hourly,isHourly: true),
                                   weather_info_widget(data: data.daily)
 
 

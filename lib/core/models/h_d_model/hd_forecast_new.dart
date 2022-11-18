@@ -1,8 +1,4 @@
-// To parse this JSON data, do
-//
-//     final hdForecastNew = hdForecastNewFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 HdForecastNew hdForecastNewFromJson(String str) => HdForecastNew.fromJson(json.decode(str));
@@ -133,7 +129,7 @@ class Hourly {
 
   factory Hourly.fromJson(Map<String, dynamic> json) => Hourly(
     dt: json["dt"]??0,
-    temp: json["temp"]??0.toDouble(),
+    temp: json["temp"]??0,
     weather: Weather.fromJson(json["weather"][0]),
   );
 

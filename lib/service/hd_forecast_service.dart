@@ -1,9 +1,5 @@
 import 'dart:math';
 
-import 'package:dio/dio.dart';
-import 'package:weatherapp/core/models/daily_api_model/general_model.dart';
-import 'package:weatherapp/core/models/h_d_model/hourly_daily_forecast_model.dart';
-
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 

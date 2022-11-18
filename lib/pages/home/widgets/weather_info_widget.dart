@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:weatherapp/core/constants/colors.dart';
 import 'package:weatherapp/core/models/h_d_model/hd_forecast_new.dart';
 import 'package:weatherapp/core/widgets/text_widget.dart';
+import 'package:weatherapp/utils/icontolottie.dart';
 
 import '../../../core/constants/mediaquares.dart';
-import 'package:weatherapp/core/models/h_d_model/hourly_forecast_model.dart';
-import 'package:weatherapp/core/models/h_d_model/daily_forecast_model.dart';
+
 
 
 
 
 
 class weather_info_widget extends StatelessWidget {
-   List<Daily> data;
-   weather_info_widget({required this.data,Key? key}) : super(key: key);
+  bool isHourly;
+   List data;
+   weather_info_widget({required this.data,this.isHourly=false,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +43,15 @@ class weather_info_widget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                text_widget("${data[index].dt}",fontsize: 16),
+                isHourly?
+                text_widget("${DateFormat.j().format(DateTime.fromMillisecondsSinceEpoch(data[index].dt*1000))}",fontsize: 16):
+                text_widget("${DateFormat.E().format(DateTime.fromMillisecondsSinceEpoch(data[index].dt*1000))}",fontsize: 16),
                 SizedBox(
                   width: m_w(context)*0.13,
                   height: m_w(context)*0.13,
-                  child: Image.network("http://openweathermap.org/img/w/${data[index].weather.icon}.png"),
-
-                ),
+                  child: Lottie.asset(getLottie(data[index].weather.icon))),
+                isHourly?
+                text_widget("${data[index].temp.round()}°"):
                 text_widget("${data[index].temp.temp.round()}°")
               ],
             ),
