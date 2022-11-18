@@ -5,4 +5,5 @@ class AppImages{
   static const bg="assets/images/background.png";
   static const home_bg="assets/images/home_bg.png";
   static const navigationbar="assets/images/navigationbar.png";
+  static const rectangle="assets/images/rectangle.png";
 }

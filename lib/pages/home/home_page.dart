@@ -6,6 +6,7 @@ import 'package:weatherapp/core/constants/icons.dart';
 import 'package:weatherapp/core/constants/image.dart';
 import 'package:weatherapp/core/constants/mediaquares.dart';
 import 'package:weatherapp/core/models/daily_api_model/general_model.dart';
+import 'package:weatherapp/core/routes/routes.dart';
 import 'package:weatherapp/core/widgets/text_widget.dart';
 import 'package:weatherapp/pages/home/widgets/bottom_sheet_widget.dart';
 import 'package:weatherapp/pages/home/widgets/weather_info_widget.dart';
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Stack(
                 children: [
-                  const Positioned(
+                  Positioned(
                     bottom: 70,
                     child: bottom_sheet_widget(),
                   ), //Bottomsheet
@@ -78,7 +79,9 @@ class _HomePageState extends State<HomePage> {
                             Padding(
                                 padding: const EdgeInsets.all(36).r,
                                 child: Image.asset(AppIcons.add)),
-                            SvgPicture.asset(AppIcons.menu),
+                            InkWell(
+                              onTap: ()=>Navigator.pushNamed(context, RouteName.search),
+                                child: SvgPicture.asset(AppIcons.menu)),
                           ],
                         ),
                       )),
